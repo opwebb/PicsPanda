@@ -1,0 +1,11 @@
+
+User-agent: *
+Allow: /
+
+# Disallow crawling of privacy and terms pages
+Disallow: /privacy.html$
+Disallow: /terms.html$
+Disallow: /cookies.html$
+
+# Sitemap location
+Sitemap: https://picspanda.com/sitemap.xml

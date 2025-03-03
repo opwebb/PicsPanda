@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='white'/%3E%3Ccircle cx='30' cy='40' r='15' fill='black'/%3E%3Ccircle cx='70' cy='40' r='15' fill='black'/%3E%3Ccircle cx='30' cy='40' r='5' fill='white'/%3E%3Ccircle cx='70' cy='40' r='5' fill='white'/%3E%3Cellipse cx='50' cy='65' rx='20' ry='15' fill='black'/%3E%3Cpath d='M40 65 Q50 75 60 65' stroke='white' stroke-width='3' fill='none'/%3E%3Ctext x='50' y='30' font-size='15' fill='%23FF2D55' text-anchor='middle' font-family='Arial, sans-serif'%3EPicsPanda%3C/text%3E%3C/svg%3E">
+  <title>PicsPanda - Free Online PDF & Image Tools</title>
+  <meta name="description" content="Free online PDF and image tools for compression, conversion, and editing. Works offline, no signup required. Process files right in your browser.">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#FF2D55">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="PicsPanda">
+  <link rel="apple-touch-icon" href="/images/icon-192.png">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://picspanda.com/">
+  <meta property="og:title" content="PicsPanda - Free Online PDF & Image Tools">
+  <meta property="og:description" content="Free online PDF and image tools for compression, conversion, and editing. Works offline, no signup required.">
+  <meta property="og:image" content="https://picspanda.com/images/social-preview.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://picspanda.com/">
+  <meta property="twitter:title" content="PicsPanda - Free Online PDF & Image Tools">
+  <meta property="twitter:description" content="Free online PDF and image tools for compression, conversion, and editing. Works offline, no signup required.">
+  <meta property="twitter:image" content="https://picspanda.com/images/social-preview.jpg">
+
+  <!-- Performance optimizations -->
+  <link rel="dns-prefetch" href="https://unpkg.com">
+  <link rel="preconnect" href="https://unpkg.com" crossorigin>
+
+  <!-- Critical CSS inline (minimized version) -->
+  <style>
+    body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6;color:var(--text);background-color:var(--body-bg)}
+    :root{--primary:#FF2D55;--primary-dark:#D91E45;--secondary:#f5f7fa;--text:#333;--body-bg:#ffffff}
+    .navbar{position:sticky;top:0;z-index:100;background-color:var(--body-bg);box-shadow:0 2px 4px rgba(0,0,0,.1)}
+  </style>
+</head>
+<body>
+  <div class="app">
+    <header>
+      <nav class="navbar">
+        <div class="container">
+          <a href="/" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="32" height="32">
+              <circle cx="50" cy="50" r="45" fill="white"/>
+              <circle cx="30" cy="40" r="15" fill="black"/>
+              <circle cx="70" cy="40" r="15" fill="black"/>
+              <circle cx="30" cy="40" r="5" fill="white"/>
+              <circle cx="70" cy="40" r="5" fill="white"/>
+              <ellipse cx="50" cy="65" rx="20" ry="15" fill="black"/>
+              <path d="M40 65 Q50 75 60 65" stroke="white" stroke-width="3" fill="none"/>
+            </svg>
+            <span>PicsPanda</span>
+          </a>
+          <div class="site-controls">
+            <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+              </svg>
+            </button>
+            <div class="lang-selector">
+              <select id="langSelector" aria-label="Select language">
+                <option value="en">EN</option>
+                <option value="es">ES</option>
+                <option value="fr">FR</option>
+              </select>
+            </div>
+          </div>
+          <div class="menu-toggle" id="menuToggle">☰</div>
+          <ul class="nav-links" id="navLinks">
+            <li><a href="index.html" class="active" data-i18n="home">Home</a></li>
+            <li><a href="convert.html" data-i18n="convert">Convert</a></li>
+            <li><a href="compress.html" data-i18n="compress">Compress</a></li>
+            <li><a href="pdf-compress.html" data-i18n="pdfTools">PDF Tools</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="#" id="donateBtn" class="donate-btn">Donate</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <h1 data-i18n="heroTitle">Free Online PDF & Image Tools</h1>
+          <p data-i18n="heroDesc">Process your files directly in your browser. No uploads to servers, no registration required.</p>
+          <div class="feature-buttons">
+            <a href="convert.html" class="btn btn-primary" data-i18n="convertImages">Convert Images</a>
+            <a href="compress.html" class="btn btn-secondary" data-i18n="compressImages">Compress Images</a>
+            <a href="pdf-compress.html" class="btn btn-secondary" data-i18n="pdfTools">PDF Tools</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="features">
+        <div class="container">
+          <h2 data-i18n="features">Our Features</h2>
+          <div class="feature-grid">
+            <div class="feature-card">
+              <h3>Image Conversion</h3>
+              <p>Convert between PNG, JPEG, WEBP, and more formats.</p>
+              <a href="convert.html" class="btn btn-sm">Try Now</a>
+            </div>
+            <div class="feature-card">
+              <h3>Image Compression</h3>
+              <p>Reduce file size while maintaining quality.</p>
+              <a href="compress.html" class="btn btn-sm">Try Now</a>
+            </div>
+            <div class="feature-card">
+              <h3>PDF Compression</h3>
+              <p>Make your PDF files smaller and easier to share.</p>
+              <a href="pdf-compress.html" class="btn btn-sm">Try Now</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="how-to-use">
+        <div class="container">
+          <h2>How To Use PicsPanda</h2>
+          <div class="steps-container">
+            <div class="step">
+              <div class="step-number">1</div>
+              <h3>Upload Your Image</h3>
+              <p>Select a file from your computer or drag and drop it into the upload area.</p>
+            </div>
+            <div class="step">
+              <div class="step-number">2</div>
+              <h3>Set Your Options</h3>
+              <p>Choose the desired format, quality, or dimensions depending on your needs.</p>
+            </div>
+            <div class="step">
+              <div class="step-number">3</div>
+              <h3>Download Result</h3>
+              <p>Your processed file will be ready in seconds. Just click the download button.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonials">
+        <div class="container">
+          <h2>What Our Users Say</h2>
+          <div class="stats-highlight">
+            <div class="stat">
+              <div class="stat-number">10M+</div>
+              <div class="stat-label">Monthly Users</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">4.7</div>
+              <div class="stat-label">Average Rating</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">400+</div>
+              <div class="stat-label">Verified Reviews</div>
+            </div>
+          </div>
+          <p class="join-community">Join a thriving community of creators who rely on our PicsPanda Tools.</p>
+
+          <div class="testimonial-slider" id="testimonialSlider">
+            <div class="testimonial-slide">
+              <div class="testimonial-content">
+                <div class="testimonial-rating">★★★★★</div>
+                <h3>VERY VERY efficient to use</h3>
+                <p>Very efficient to use, no boring ads, all that annoying stuff there's like a million different tools to use, you can resize images (and you can resize them in bulk!), compressing images, cropping, flipping, rotating, enlarging, you name it!!!</p>
+                <div class="testimonial-author">
+                  <strong>Burnt Noodles</strong>
+                  <span class="verified-badge">Verified</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-slide">
+              <div class="testimonial-content">
+                <div class="testimonial-rating">★★★★★</div>
+                <h3>Great service</h3>
+                <p>I thought it would be difficult to get the photo to the requirements, but this image resizer quickly and efficently got the photo to the needed dimensions and size.</p>
+                <div class="testimonial-author">
+                  <strong>Thomas Humphreys</strong>
+                  <span class="verified-badge">Verified</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-slide">
+              <div class="testimonial-content">
+                <div class="testimonial-rating">★★★★★</div>
+                <h3>Best online image resizing tool</h3>
+                <p>Really elegant interface and streamlined user experience, no annoying popups or paywalls. Gets the job done no matter the size (bulk resize is super nice). Best online image resizing tool, hands down!</p>
+                <div class="testimonial-author">
+                  <strong>Blake</strong>
+                  <span class="verified-badge">Verified</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-slide">
+              <div class="testimonial-content">
+                <div class="testimonial-rating">★★★★★</div>
+                <h3>Nice app</h3>
+                <p>Nice app. No adverts that are located on irritating locations. It's a straight forward resizer without fancy things, but for most of the people exactly what you're looking for. Bulk converter very easy to use.</p>
+                <div class="testimonial-author">
+                  <strong>Wilbert Van Zelst</strong>
+                  <span class="verified-badge">Verified</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-controls">
+            <button id="prevTestimonial" aria-label="Previous testimonial">←</button>
+            <div class="testimonial-dots" id="testimonialDots"></div>
+            <button id="nextTestimonial" aria-label="Next testimonial">→</button>
+          </div>
+          <p class="testimonial-rating-note">Rated 4.7/5 based on 400+ reviews.</p>
+        </div>
+      </section>
+
+      <section class="ad-container">
+        <div class="container">
+          <div id="main-ad-container"></div>
+        </div>
+      </section>
+
+      <section class="benefits">
+        <div class="container">
+          <h2>Why Choose PicsPanda?</h2>
+          <div class="benefits-grid">
+            <div class="benefit-item">
+              <h3>Perfect Quality</h3>
+              <p>The best online image resizer to resize your images at the highest quality.</p>
+            </div>
+            <div class="benefit-item">
+              <h3>Lightning Fast</h3>
+              <p>This cloud-hosted, highly scalable tool can resize your images within seconds!</p>
+            </div>
+            <div class="benefit-item">
+              <h3>Easy To Use</h3>
+              <p>Simply upload your image and enter a target size. It's as easy as that!</p>
+            </div>
+            <div class="benefit-item">
+              <h3>Works Anywhere</h3>
+              <p>PicsPanda is browser-based (no software to install). It works on any platform (Windows, Linux, Mac).</p>
+            </div>
+            <div class="benefit-item">
+              <h3>Privacy Guaranteed</h3>
+              <p>Your images are processed directly in your browser and never uploaded to our servers.</p>
+            </div>
+            <div class="benefit-item">
+              <h3>It's Free</h3>
+              <p>We've helped process millions of images for free! No registration, no watermarks, and no hidden fees.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <span>PicsPanda</span>
+            <p>Free online tools for everyone. Process your files directly in your browser with no data uploaded to our servers.</p>
+
+            <div class="newsletter-container">
+              <h4>Subscribe to our newsletter</h4>
+              <form id="newsletter-form" class="newsletter-form">
+                <input type="email" id="newsletter-email" placeholder="Your email address" required>
+                <button type="submit">Subscribe</button>
+              </form>
+            </div>
+
+            <div class="social-icons">
+              <a href="#" class="social-icon" aria-label="Twitter">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+              </a>
+              <a href="#" class="social-icon" aria-label="Facebook">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+              </a>
+              <a href="#" class="social-icon" aria-label="Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+              </a>
+              <a href="#" class="social-icon" aria-label="GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              </a>
+            </div>
+          </div>
+          <div class="footer-links">
+            <div class="link-group">
+              <h4>Tools</h4>
+              <ul>
+                <li><a href="convert.html">Convert Images</a></li>
+                <li><a href="compress.html">Compress Images</a></li>
+                <li><a href="pdf-compress.html">PDF Compression</a></li>
+              </ul>
+            </div>
+            <div class="link-group">
+              <h4>Company</h4>
+              <ul>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+            </div>
+            <div class="link-group">
+              <h4>Legal</h4>
+              <ul>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Terms of Service</a></li>
+                <li><a href="cookies.html">Cookie Policy</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="copyright">
+          © 2023 PicsPanda. All rights reserved. Process your files securely and locally.
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <div id="cookie-consent" class="cookie-consent">
+    <div class="cookie-content">
+      <p>We use cookies to enhance your experience on our website. By continuing to use our site, you consent to our use of cookies. <a href="cookies.html">Learn more</a></p>
+      <div class="cookie-buttons">
+        <button id="cookie-accept" class="btn btn-primary btn-sm">Accept</button>
+        <button id="cookie-decline" class="btn btn-outline btn-sm">Decline</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/languages.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/performance.js"></script>
+  <script src="js/adaptive-loading.js"></script>
+  <script src="js/testimonials.js"></script>
+  <script src="js/analytics.js"></script>
+  <script src="js/adsense.js"></script>
+  <script src="js/newsletter.js"></script>
+  <script src="js/donate.js"></script>
+
+  <!-- Preload critical fonts -->
+  <link rel="preload" as="font" href="/fonts/roboto-v20-latin-regular.woff2" type="font/woff2" crossorigin="anonymous">
+
+  <!-- Add prefetch for common navigation paths -->
+  <link rel="prefetch" href="/convert.html">
+  <link rel="prefetch" href="/compress.html">
+  <link rel="prefetch" href="/pdf-compress.html">
+</body>
+</html>
